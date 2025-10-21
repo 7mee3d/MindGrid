@@ -54,6 +54,16 @@ namespace Tic_Tac_Toe_Game
         
         PictureBox[,] arrayPictureBoxMindGrid = new PictureBox[_NUMBER_ROW_ARRAY, _NUMBER_COLUMN_ARRAY];
     
+        private void InitialSettingMindGrid()
+        {
+            startFirstGame = enTurnPlayers.ekPLAYER_ONE;
+            labelWhoWinnerGame.Text = "In Process";
+            ResetPictureBoxControl();
+            labelHowTurnNow.Text = howTurnToGame(startFirstGame);
+            InitializationArrayPictureBoxies();
+            countGame = 0; 
+        }
+    
         private void InitializationArrayPictureBoxies()
         {
 
@@ -83,7 +93,7 @@ namespace Tic_Tac_Toe_Game
                 if (
                       (arrayPictureBoxMindGrid[counter, 0].Tag == "O" && arrayPictureBoxMindGrid[counter, 1].Tag == "O" && arrayPictureBoxMindGrid[counter, 2].Tag == "O") ||
                        (arrayPictureBoxMindGrid[0, counter].Tag == "O" && arrayPictureBoxMindGrid[1, counter].Tag == "O" && arrayPictureBoxMindGrid[2, counter].Tag == "O")
-                   ) return enWinnerGame.ekPLAYER_ONE;
+                   ) return enWinnerGame.ekPALYER_TWO;
             }
 
             //Diagonal
@@ -130,13 +140,50 @@ namespace Tic_Tac_Toe_Game
             countGame++;
             PB.Enabled = false;
             labelWhoWinnerGame.Text =  WhoWinnerInGame(WhoWinnerGame());
+            ShowMessageBoxAfterWinner(labelWhoWinnerGame.Text);
         }
 
+        private void ResetPictureBoxControl()
+        {
+            foreach (Control outterControl in this.Controls )
+            {
+                if(outterControl is PictureBox PB )
+                {
+                    PB.Image = Resources.NOT_Image;
+                    PB.Tag = "";
+                    PB.Enabled = true; 
+
+                }
+            }
+        }
+     
+        private void ShowMessageBoxAfterWinner (string wordWinner)
+        {
+            if(wordWinner == "Player1" )
+            {
+                MessageBox.Show($"The Winner this Round Game [ {wordWinner } ] " , "Who Winner Game", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                InitialSettingMindGrid();
+
+            }
+            if (wordWinner == "Player2")
+            {
+                MessageBox.Show($"The Winner this Round Game [ {wordWinner} ] ", "Who Winner Game", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                InitialSettingMindGrid();
+
+            }
+
+            if (countGame == 9)
+            {
+                MessageBox.Show($"No The Winner [ Draw ] this Round Game", "Who Winner Game", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                InitialSettingMindGrid();
+
+            }
+        }
+ 
         public MindGrid()
         {
             InitializeComponent();
-            labelHowTurnNow.Text = howTurnToGame(startFirstGame);
-            InitializationArrayPictureBoxies(); 
+            InitialSettingMindGrid();
         }
 
         private void DrawLinesTicTacToeGrid(PaintEventArgs eventPaint )
@@ -179,7 +226,6 @@ namespace Tic_Tac_Toe_Game
             eventPaint.Graphics.DrawLine(pen, point1Hori2, point2HORI2);
         }
       
-  
         private void Form1_Load(object sender, EventArgs e)
         {
 
