@@ -13,10 +13,19 @@ namespace Tic_Tac_Toe_Game
 {
     public partial class MindGrid : Form
     {
+
         enum enTurnPlayers
         {
             ekPLAYER_ONE = 1,
             ekPLAYER_TWO = 2
+        }
+
+        enum enWinnerGame
+        {
+            ekPLAYER_ONE = 1 , 
+            ekPALYER_TWO = 2 , 
+            ekDRAW = 3 , 
+            ekIN_PROSSES = 4 
         }
 
         private string howTurnToGame(enTurnPlayers whatPlayer)
@@ -31,6 +40,7 @@ namespace Tic_Tac_Toe_Game
                 labelHowTurnNow.ForeColor = Color.FromArgb(212, 255, 114);
                 return "Player2";
             }
+
         }
         
         enTurnPlayers startFirstGame = enTurnPlayers.ekPLAYER_ONE;
@@ -39,19 +49,67 @@ namespace Tic_Tac_Toe_Game
 
         private const ushort _NUMBER_ROW_ARRAY = 3;
         private const ushort _NUMBER_COLUMN_ARRAY = 3;
-
-
-        public MindGrid()
-        {
-            InitializeComponent();
-            labelHowTurnNow.Text = howTurnToGame(startFirstGame);
-        }
+        private ushort countGame = 0; 
 
         
-        PictureBox[,] arrayPictureBoxMindGrid = new PictureBox[_NUMBER_ROW_ARRAY, _NUMBER_COLUMN_ARRAY]; 
+        PictureBox[,] arrayPictureBoxMindGrid = new PictureBox[_NUMBER_ROW_ARRAY, _NUMBER_COLUMN_ARRAY];
+    
+        private void InitializationArrayPictureBoxies()
+        {
 
-   
-        private void changeImagesPictureBoxAndTurnGame (ref PictureBox PB , ushort row , ushort column /*, PictureBox[,] arrayPictureBoxies*/  )
+            arrayPictureBoxMindGrid[0, 0] = pictureBox1;
+            arrayPictureBoxMindGrid[0, 1] = pictureBox2;
+            arrayPictureBoxMindGrid[0, 2] = pictureBox3;
+            arrayPictureBoxMindGrid[1, 0] = pictureBox4;
+            arrayPictureBoxMindGrid[1, 1] = pictureBox5;
+            arrayPictureBoxMindGrid[1, 2] = pictureBox6;
+            arrayPictureBoxMindGrid[2, 0] = pictureBox7;
+            arrayPictureBoxMindGrid[2, 1] = pictureBox8;
+            arrayPictureBoxMindGrid[2, 2] = pictureBox9;
+
+        }
+      
+        private enWinnerGame WhoWinnerGame()
+        {
+            for (int counter = 0; counter < _NUMBER_ROW_ARRAY; counter++)
+            {
+                //Row
+                if (
+                       (arrayPictureBoxMindGrid[counter, 0].Tag == "X" && arrayPictureBoxMindGrid[counter, 1].Tag == "X" && arrayPictureBoxMindGrid[counter, 2].Tag == "X") ||
+                        (arrayPictureBoxMindGrid[0, counter].Tag == "X" && arrayPictureBoxMindGrid[1, counter].Tag == "X" && arrayPictureBoxMindGrid[2, counter].Tag == "X")
+                    ) return enWinnerGame.ekPLAYER_ONE;
+
+                //Column
+                if (
+                      (arrayPictureBoxMindGrid[counter, 0].Tag == "O" && arrayPictureBoxMindGrid[counter, 1].Tag == "O" && arrayPictureBoxMindGrid[counter, 2].Tag == "O") ||
+                       (arrayPictureBoxMindGrid[0, counter].Tag == "O" && arrayPictureBoxMindGrid[1, counter].Tag == "O" && arrayPictureBoxMindGrid[2, counter].Tag == "O")
+                   ) return enWinnerGame.ekPLAYER_ONE;
+            }
+
+            //Diagonal
+            if ((arrayPictureBoxMindGrid[0, 2].Tag == "X" && arrayPictureBoxMindGrid[1, 1].Tag == "X" && arrayPictureBoxMindGrid[2, 0].Tag == "X") ||
+                (arrayPictureBoxMindGrid[0, 0].Tag == "X" && arrayPictureBoxMindGrid[1, 1].Tag == "X" && arrayPictureBoxMindGrid[2, 2].Tag == "X")
+                ) return enWinnerGame.ekPLAYER_ONE;
+
+            if ((arrayPictureBoxMindGrid[0, 2].Tag == "O" && arrayPictureBoxMindGrid[1, 1].Tag == "O" && arrayPictureBoxMindGrid[2, 0].Tag == "O") ||
+             (arrayPictureBoxMindGrid[0, 0].Tag == "O" && arrayPictureBoxMindGrid[1, 1].Tag == "O" && arrayPictureBoxMindGrid[2, 2].Tag == "O")
+                 ) return enWinnerGame.ekPALYER_TWO;
+
+
+
+            return enWinnerGame.ekIN_PROSSES;
+        }
+
+        private string WhoWinnerInGame(enWinnerGame whowinner)
+        {
+            if (whowinner == enWinnerGame.ekPLAYER_ONE) return "Player1";
+            else if (whowinner == enWinnerGame.ekPALYER_TWO) return "Player2";
+            else if (countGame == 9) return "Draw";
+
+            return "In Process";
+        }
+
+        private void changeImagesPictureBoxAndTurnGame (ref PictureBox PB , ushort row , ushort column/* , PictureBox[,] arrayPictureBoxies */ )
         {
 
             if (startFirstGame == enTurnPlayers.ekPLAYER_ONE)
@@ -69,10 +127,18 @@ namespace Tic_Tac_Toe_Game
                 labelHowTurnNow.Text = howTurnToGame(startFirstGame);
             }
 
-            PB.Enabled = false; 
-
+            countGame++;
+            PB.Enabled = false;
+            labelWhoWinnerGame.Text =  WhoWinnerInGame(WhoWinnerGame());
         }
-     
+
+        public MindGrid()
+        {
+            InitializeComponent();
+            labelHowTurnNow.Text = howTurnToGame(startFirstGame);
+            InitializationArrayPictureBoxies(); 
+        }
+
         private void DrawLinesTicTacToeGrid(PaintEventArgs eventPaint )
         {
             Color White = Color.White;
@@ -112,22 +178,8 @@ namespace Tic_Tac_Toe_Game
 
             eventPaint.Graphics.DrawLine(pen, point1Hori2, point2HORI2);
         }
-     
-        private void InitializationArrayPictureBoxies()
-        {
-
-            arrayPictureBoxMindGrid[0, 0] = pictureBox1; 
-            arrayPictureBoxMindGrid[0, 1] = pictureBox2; 
-            arrayPictureBoxMindGrid[0, 2] = pictureBox3; 
-            arrayPictureBoxMindGrid[1 ,0] = pictureBox4; 
-            arrayPictureBoxMindGrid[1, 1] = pictureBox5; 
-            arrayPictureBoxMindGrid[1, 2] = pictureBox6; 
-            arrayPictureBoxMindGrid[2, 0] = pictureBox7; 
-            arrayPictureBoxMindGrid[2, 1] = pictureBox8; 
-            arrayPictureBoxMindGrid[2, 2] = pictureBox9; 
-
-        }
       
+  
         private void Form1_Load(object sender, EventArgs e)
         {
 

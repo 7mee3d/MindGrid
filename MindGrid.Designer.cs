@@ -40,6 +40,8 @@
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.labelHowTurnNow = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.labelWhoWinnerGame = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -192,6 +194,30 @@
             this.labelHowTurnNow.TabIndex = 1;
             this.labelHowTurnNow.Text = "-----------";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Bauhaus 93", 69.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(59, 384);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(336, 106);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Winner";
+            // 
+            // labelWhoWinnerGame
+            // 
+            this.labelWhoWinnerGame.AutoSize = true;
+            this.labelWhoWinnerGame.BackColor = System.Drawing.Color.Transparent;
+            this.labelWhoWinnerGame.Font = new System.Drawing.Font("Bauhaus 93", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelWhoWinnerGame.ForeColor = System.Drawing.Color.White;
+            this.labelWhoWinnerGame.Location = new System.Drawing.Point(108, 490);
+            this.labelWhoWinnerGame.Name = "labelWhoWinnerGame";
+            this.labelWhoWinnerGame.Size = new System.Drawing.Size(183, 39);
+            this.labelWhoWinnerGame.TabIndex = 1;
+            this.labelWhoWinnerGame.Text = "In Process";
+            // 
             // MindGrid
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -199,6 +225,8 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(1394, 781);
+            this.Controls.Add(this.labelWhoWinnerGame);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.labelHowTurnNow);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox9);
@@ -244,6 +272,8 @@
         private System.Windows.Forms.PictureBox pictureBox9;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label labelHowTurnNow;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label labelWhoWinnerGame;
     }
 }
 
