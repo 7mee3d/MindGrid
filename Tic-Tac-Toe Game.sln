@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36414.22 d17.14
+VisualStudioVersion = 17.14.36414.22
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tic-Tac-Toe Game", "Tic-Tac-Toe Game.csproj", "{93F38653-E052-49B1-9619-4683DBBCBCA2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MindGrid", "MindGrid.csproj", "{93F38653-E052-49B1-9619-4683DBBCBCA2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

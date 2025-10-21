@@ -59,5 +59,35 @@ namespace MindGrid.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap NOT_Image {
+            get {
+                object obj = ResourceManager.GetObject("NOT Image", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap O_Image_Tic_Tac_Toe {
+            get {
+                object obj = ResourceManager.GetObject("O-Image Tic-Tac-Toe", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap X_Image_Tic_Tac_Toe {
+            get {
+                object obj = ResourceManager.GetObject("X-Image Tic-Tac-Toe", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
