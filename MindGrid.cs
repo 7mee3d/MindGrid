@@ -236,6 +236,7 @@ namespace Tic_Tac_Toe_Game
             DrawLinesTicTacToeGrid(e); 
         }
 
+
         // Events Picture
         private void pictureBox2_Click(object sender, EventArgs e)
         {
@@ -301,6 +302,10 @@ namespace Tic_Tac_Toe_Game
             InitialSettingMindGrid();
 
         }
-   
+
+        private void timer_Tick(object sender, EventArgs e)
+        {
+            labelTimeNow.Text = DateTime.Now.ToString();
+        }
     }
 }

@@ -46,6 +46,8 @@
             this.GButtonRestartGame = new Guna.UI2.WinForms.Guna2GradientButton();
             this.GButtonExitGame = new Guna.UI2.WinForms.Guna2GradientButton();
             this.GBorderLessFormMindGrid = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
+            this.timer = new System.Windows.Forms.Timer(this.components);
+            this.labelTimeNow = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -291,6 +293,23 @@
             this.GBorderLessFormMindGrid.DockIndicatorTransparencyValue = 0.6D;
             this.GBorderLessFormMindGrid.TransparentWhileDrag = true;
             // 
+            // timer
+            // 
+            this.timer.Enabled = true;
+            this.timer.Tick += new System.EventHandler(this.timer_Tick);
+            // 
+            // labelTimeNow
+            // 
+            this.labelTimeNow.AutoSize = true;
+            this.labelTimeNow.BackColor = System.Drawing.Color.Transparent;
+            this.labelTimeNow.Font = new System.Drawing.Font("Bell MT", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTimeNow.ForeColor = System.Drawing.Color.White;
+            this.labelTimeNow.Location = new System.Drawing.Point(1210, 758);
+            this.labelTimeNow.Name = "labelTimeNow";
+            this.labelTimeNow.Size = new System.Drawing.Size(18, 17);
+            this.labelTimeNow.TabIndex = 1;
+            this.labelTimeNow.Text = "--";
+            // 
             // MindGrid
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -300,6 +319,7 @@
             this.ClientSize = new System.Drawing.Size(1388, 781);
             this.Controls.Add(this.GButtonExitGame);
             this.Controls.Add(this.GButtonRestartGame);
+            this.Controls.Add(this.labelTimeNow);
             this.Controls.Add(this.labelWhoWinnerGame);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.labelHowTurnNow);
@@ -353,6 +373,8 @@
         private Guna.UI2.WinForms.Guna2GradientButton GButtonRestartGame;
         private Guna.UI2.WinForms.Guna2GradientButton GButtonExitGame;
         private Guna.UI2.WinForms.Guna2BorderlessForm GBorderLessFormMindGrid;
+        private System.Windows.Forms.Label labelTimeNow;
+        private System.Windows.Forms.Timer timer;
     }
 }
 
