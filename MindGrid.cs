@@ -14,6 +14,7 @@ namespace Tic_Tac_Toe_Game
     public partial class MindGrid : Form
     {
 
+        //Enumrations 
         enum enTurnPlayers
         {
             ekPLAYER_ONE = 1,
@@ -43,17 +44,18 @@ namespace Tic_Tac_Toe_Game
 
         }
         
-        enTurnPlayers startFirstGame = enTurnPlayers.ekPLAYER_ONE;
 
 
-
+        //Constant Game
         private const ushort _NUMBER_ROW_ARRAY = 3;
         private const ushort _NUMBER_COLUMN_ARRAY = 3;
-        private ushort countGame = 0; 
 
-        
-        PictureBox[,] arrayPictureBoxMindGrid = new PictureBox[_NUMBER_ROW_ARRAY, _NUMBER_COLUMN_ARRAY];
-    
+        //Private Variable 
+        private ushort countGame = 0;         
+        private PictureBox[,] arrayPictureBoxMindGrid = new PictureBox[_NUMBER_ROW_ARRAY, _NUMBER_COLUMN_ARRAY];
+        private enTurnPlayers startFirstGame = enTurnPlayers.ekPLAYER_ONE;
+
+
         private void InitialSettingMindGrid()
         {
             startFirstGame = enTurnPlayers.ekPLAYER_ONE;
@@ -160,24 +162,27 @@ namespace Tic_Tac_Toe_Game
         private void ShowMessageBoxAfterWinner (string wordWinner)
         {
             if(wordWinner == "Player1" )
-            {
-                MessageBox.Show($"The Winner this Round Game [ {wordWinner } ] " , "Who Winner Game", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                InitialSettingMindGrid();
-
-            }
+                MessageBox.Show
+                    ($"The Winner this Round Game [ {wordWinner } ] "
+                    , "Who Winner Game"
+                    , MessageBoxButtons.OK
+                    , MessageBoxIcon.Information);
+         
             if (wordWinner == "Player2")
-            {
-                MessageBox.Show($"The Winner this Round Game [ {wordWinner} ] ", "Who Winner Game", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                InitialSettingMindGrid();
+                MessageBox.Show
+                    ($"The Winner this Round Game [ {wordWinner} ] "
+                    , "Who Winner Game"
+                    , MessageBoxButtons.OK
+                    , MessageBoxIcon.Information);
 
-            }
 
-            if (countGame == 9)
-            {
-                MessageBox.Show($"No The Winner [ Draw ] this Round Game", "Who Winner Game", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                InitialSettingMindGrid();
+            if (countGame == 9 && wordWinner == "Draw")
+                MessageBox.Show
+                    ($"No The Winner [ Draw ] this Round Game"
+                    , "Who Winner Game"
+                    , MessageBoxButtons.OK
+                    , MessageBoxIcon.Information);
 
-            }
         }
  
         public MindGrid()
@@ -225,18 +230,13 @@ namespace Tic_Tac_Toe_Game
 
             eventPaint.Graphics.DrawLine(pen, point1Hori2, point2HORI2);
         }
-      
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-
-        }
 
         private void MindGrid_Paint(object sender, PaintEventArgs e)
         {
             DrawLinesTicTacToeGrid(e); 
         }
 
+        // Events Picture
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             changeImagesPictureBoxAndTurnGame(ref pictureBox2, 0, 1 /*arrayPictureBoxMindGrid*/);
@@ -290,9 +290,17 @@ namespace Tic_Tac_Toe_Game
             changeImagesPictureBoxAndTurnGame(ref pictureBox1, 0, 0 /*arrayPictureBoxMindGrid*/); 
         }
 
+        //Start Section Control Buttons 
         private void GButtonExitGame_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
+
+        private void GButtonRestartGame_Click(object sender, EventArgs e)
+        {
+            InitialSettingMindGrid();
+
+        }
+   
     }
 }

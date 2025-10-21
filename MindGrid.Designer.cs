@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MindGrid));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -44,6 +45,7 @@
             this.labelWhoWinnerGame = new System.Windows.Forms.Label();
             this.GButtonRestartGame = new Guna.UI2.WinForms.Guna2GradientButton();
             this.GButtonExitGame = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.GBorderLessFormMindGrid = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -244,11 +246,12 @@
             this.GButtonRestartGame.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(213)))), ((int)(((byte)(255)))));
             this.GButtonRestartGame.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(213)))), ((int)(((byte)(255)))));
             this.GButtonRestartGame.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(130)))), ((int)(((byte)(244)))));
-            this.GButtonRestartGame.Location = new System.Drawing.Point(298, 636);
+            this.GButtonRestartGame.Location = new System.Drawing.Point(299, 636);
             this.GButtonRestartGame.Name = "GButtonRestartGame";
             this.GButtonRestartGame.Size = new System.Drawing.Size(245, 56);
             this.GButtonRestartGame.TabIndex = 2;
             this.GButtonRestartGame.Text = "Restart Game";
+            this.GButtonRestartGame.Click += new System.EventHandler(this.GButtonRestartGame_Click);
             // 
             // GButtonExitGame
             // 
@@ -276,10 +279,17 @@
             this.GButtonExitGame.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(130)))), ((int)(((byte)(244)))));
             this.GButtonExitGame.Location = new System.Drawing.Point(77, 636);
             this.GButtonExitGame.Name = "GButtonExitGame";
-            this.GButtonExitGame.Size = new System.Drawing.Size(163, 56);
+            this.GButtonExitGame.Size = new System.Drawing.Size(196, 56);
             this.GButtonExitGame.TabIndex = 2;
-            this.GButtonExitGame.Text = "Exit";
+            this.GButtonExitGame.Text = "Exit Game";
             this.GButtonExitGame.Click += new System.EventHandler(this.GButtonExitGame_Click);
+            // 
+            // GBorderLessFormMindGrid
+            // 
+            this.GBorderLessFormMindGrid.BorderRadius = 40;
+            this.GBorderLessFormMindGrid.ContainerControl = this;
+            this.GBorderLessFormMindGrid.DockIndicatorTransparencyValue = 0.6D;
+            this.GBorderLessFormMindGrid.TransparentWhileDrag = true;
             // 
             // MindGrid
             // 
@@ -287,7 +297,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(1394, 781);
+            this.ClientSize = new System.Drawing.Size(1388, 781);
             this.Controls.Add(this.GButtonExitGame);
             this.Controls.Add(this.GButtonRestartGame);
             this.Controls.Add(this.labelWhoWinnerGame);
@@ -304,11 +314,12 @@
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "MindGrid";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mind Grid";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.MindGrid_Paint);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -341,6 +352,7 @@
         private System.Windows.Forms.Label labelWhoWinnerGame;
         private Guna.UI2.WinForms.Guna2GradientButton GButtonRestartGame;
         private Guna.UI2.WinForms.Guna2GradientButton GButtonExitGame;
+        private Guna.UI2.WinForms.Guna2BorderlessForm GBorderLessFormMindGrid;
     }
 }
 
