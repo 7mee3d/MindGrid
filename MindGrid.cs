@@ -13,39 +13,60 @@ namespace Tic_Tac_Toe_Game
 {
     public partial class MindGrid : Form
     {
+        enum enTurnPlayers
+        {
+            ekPLAYER_ONE = 1,
+            ekPLAYER_TWO = 2
+        }
+
+        private string howTurnToGame(enTurnPlayers whatPlayer)
+        {
+            if (whatPlayer == enTurnPlayers.ekPLAYER_ONE) {
+
+               labelHowTurnNow.ForeColor = Color.FromArgb(255, 140, 250); 
+                return "Player1";
+            }
+            else
+            {
+                labelHowTurnNow.ForeColor = Color.FromArgb(212, 255, 114);
+                return "Player2";
+            }
+        }
+        
+        enTurnPlayers startFirstGame = enTurnPlayers.ekPLAYER_ONE;
+
+
+
+        private const ushort _NUMBER_ROW_ARRAY = 3;
+        private const ushort _NUMBER_COLUMN_ARRAY = 3;
+
+
         public MindGrid()
         {
             InitializeComponent();
+            labelHowTurnNow.Text = howTurnToGame(startFirstGame);
         }
 
-        enum enTurnPlayers
-        {
-            ekPLAYER_ONE = 1 , 
-            ekPLAYER_TWO = 2 
-        }
-
-
-        private const ushort _NUMBER_ROW_ARRAY = 3; 
-        private const ushort _NUMBER_COLUMN_ARRAY = 3;
-
-        enTurnPlayers startFirstGame = enTurnPlayers.ekPLAYER_ONE; 
-
+        
         PictureBox[,] arrayPictureBoxMindGrid = new PictureBox[_NUMBER_ROW_ARRAY, _NUMBER_COLUMN_ARRAY]; 
 
+   
         private void changeImagesPictureBoxAndTurnGame (ref PictureBox PB , ushort row , ushort column /*, PictureBox[,] arrayPictureBoxies*/  )
         {
 
-            if(startFirstGame == enTurnPlayers.ekPLAYER_ONE)
+            if (startFirstGame == enTurnPlayers.ekPLAYER_ONE)
             {
                 PB.Image = Resources.X_Image_Tic_Tac_Toe;
                 PB.Tag = "X";
                 startFirstGame = enTurnPlayers.ekPLAYER_TWO;
+                labelHowTurnNow.Text = howTurnToGame(startFirstGame);
             }
             else
             {
                 PB.Image = Resources.O_Image_Tic_Tac_Toe;
                 PB.Tag = "O";
                 startFirstGame = enTurnPlayers.ekPLAYER_ONE;
+                labelHowTurnNow.Text = howTurnToGame(startFirstGame);
             }
 
             PB.Enabled = false; 
@@ -170,5 +191,7 @@ namespace Tic_Tac_Toe_Game
         {
             changeImagesPictureBoxAndTurnGame(ref pictureBox1, 0, 0 /*arrayPictureBoxMindGrid*/); 
         }
+
+   
     }
 }
