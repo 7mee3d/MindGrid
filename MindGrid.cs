@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MindGrid.Properties;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,6 +18,40 @@ namespace Tic_Tac_Toe_Game
             InitializeComponent();
         }
 
+        enum enTurnPlayers
+        {
+            ekPLAYER_ONE = 1 , 
+            ekPLAYER_TWO = 2 
+        }
+
+
+        private const ushort _NUMBER_ROW_ARRAY = 3; 
+        private const ushort _NUMBER_COLUMN_ARRAY = 3;
+
+        enTurnPlayers startFirstGame = enTurnPlayers.ekPLAYER_ONE; 
+
+        PictureBox[,] arrayPictureBoxMindGrid = new PictureBox[_NUMBER_ROW_ARRAY, _NUMBER_COLUMN_ARRAY]; 
+
+        private void changeImagesPictureBoxAndTurnGame (ref PictureBox PB , ushort row , ushort column /*, PictureBox[,] arrayPictureBoxies*/  )
+        {
+
+            if(startFirstGame == enTurnPlayers.ekPLAYER_ONE)
+            {
+                PB.Image = Resources.X_Image_Tic_Tac_Toe;
+                PB.Tag = "X";
+                startFirstGame = enTurnPlayers.ekPLAYER_TWO;
+            }
+            else
+            {
+                PB.Image = Resources.O_Image_Tic_Tac_Toe;
+                PB.Tag = "O";
+                startFirstGame = enTurnPlayers.ekPLAYER_ONE;
+            }
+
+            PB.Enabled = false; 
+
+        }
+     
         private void DrawLinesTicTacToeGrid(PaintEventArgs eventPaint )
         {
             Color White = Color.White;
@@ -57,6 +92,21 @@ namespace Tic_Tac_Toe_Game
             eventPaint.Graphics.DrawLine(pen, point1Hori2, point2HORI2);
         }
      
+        private void InitializationArrayPictureBoxies()
+        {
+
+            arrayPictureBoxMindGrid[0, 0] = pictureBox1; 
+            arrayPictureBoxMindGrid[0, 1] = pictureBox2; 
+            arrayPictureBoxMindGrid[0, 2] = pictureBox3; 
+            arrayPictureBoxMindGrid[1 ,0] = pictureBox4; 
+            arrayPictureBoxMindGrid[1, 1] = pictureBox5; 
+            arrayPictureBoxMindGrid[1, 2] = pictureBox6; 
+            arrayPictureBoxMindGrid[2, 0] = pictureBox7; 
+            arrayPictureBoxMindGrid[2, 1] = pictureBox8; 
+            arrayPictureBoxMindGrid[2, 2] = pictureBox9; 
+
+        }
+      
         private void Form1_Load(object sender, EventArgs e)
         {
 
@@ -70,47 +120,55 @@ namespace Tic_Tac_Toe_Game
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
+            changeImagesPictureBoxAndTurnGame(ref pictureBox2, 0, 1 /*arrayPictureBoxMindGrid*/);
 
         }
 
         private void pictureBox5_Click(object sender, EventArgs e)
         {
+            changeImagesPictureBoxAndTurnGame(ref pictureBox5, 1, 1 /*arrayPictureBoxMindGrid*/);
 
         }
 
         private void pictureBox6_Click(object sender, EventArgs e)
         {
+            changeImagesPictureBoxAndTurnGame(ref pictureBox6, 1, 2 /*arrayPictureBoxMindGrid*/);
 
         }
 
         private void pictureBox4_Click(object sender, EventArgs e)
         {
+            changeImagesPictureBoxAndTurnGame(ref pictureBox4, 1, 0 /*arrayPictureBoxMindGrid*/);
 
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
+            changeImagesPictureBoxAndTurnGame(ref pictureBox3, 0, 2 /*arrayPictureBoxMindGrid*/);
 
         }
 
         private void pictureBox8_Click(object sender, EventArgs e)
         {
+            changeImagesPictureBoxAndTurnGame(ref pictureBox8, 2,1  /*arrayPictureBoxMindGrid*/);
 
         }
 
         private void pictureBox7_Click(object sender, EventArgs e)
         {
+            changeImagesPictureBoxAndTurnGame(ref pictureBox7, 2, 0 /*arrayPictureBoxMindGrid*/);
 
         }
 
         private void pictureBox9_Click(object sender, EventArgs e)
         {
+            changeImagesPictureBoxAndTurnGame(ref pictureBox9, 2, 2  /*arrayPictureBoxMindGrid*/);
 
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-
+            changeImagesPictureBoxAndTurnGame(ref pictureBox1, 0, 0 /*arrayPictureBoxMindGrid*/); 
         }
     }
 }
