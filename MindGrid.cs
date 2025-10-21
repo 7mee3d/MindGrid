@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Tic_Tac_Toe_Game
 {
-    public partial class Form1 : Form
+    public partial class MindGrid : Form
     {
-        public Form1()
+        public MindGrid()
         {
             InitializeComponent();
         }
