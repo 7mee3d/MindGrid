@@ -83,6 +83,16 @@ namespace MindGrid.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Turn {
+            get {
+                object obj = ResourceManager.GetObject("Turn", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap X_Image_Tic_Tac_Toe {
             get {
                 object obj = ResourceManager.GetObject("X-Image Tic-Tac-Toe", resourceCulture);

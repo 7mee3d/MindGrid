@@ -59,11 +59,13 @@ namespace Tic_Tac_Toe_Game
         private void InitialSettingMindGrid()
         {
             startFirstGame = enTurnPlayers.ekPLAYER_ONE;
+            labelWhoWinnerGame.ForeColor = Color.White;
             labelWhoWinnerGame.Text = "In Process";
             ResetPictureBoxControl();
             labelHowTurnNow.Text = howTurnToGame(startFirstGame);
             InitializationArrayPictureBoxies();
-            countGame = 0; 
+            countGame = 0;
+     
         }
     
         private void InitializationArrayPictureBoxies()
@@ -149,11 +151,11 @@ namespace Tic_Tac_Toe_Game
         {
             foreach (Control outterControl in this.Controls )
             {
-                if(outterControl is PictureBox PB )
+                if (outterControl is PictureBox PB)
                 {
-                    PB.Image = Resources.NOT_Image;
-                    PB.Tag = "";
-                    PB.Enabled = true; 
+                        PB.Image = Resources.NOT_Image;
+                        PB.Tag = "";
+                        PB.Enabled = true;
 
                 }
             }
@@ -161,27 +163,36 @@ namespace Tic_Tac_Toe_Game
      
         private void ShowMessageBoxAfterWinner (string wordWinner)
         {
-            if(wordWinner == "Player1" )
-                MessageBox.Show
-                    ($"The Winner this Round Game [ {wordWinner } ] "
-                    , "Who Winner Game"
-                    , MessageBoxButtons.OK
-                    , MessageBoxIcon.Information);
-         
-            if (wordWinner == "Player2")
+            if (wordWinner == "Player1")
+            {
+                labelWhoWinnerGame.ForeColor = Color.FromArgb(255, 140, 250);
                 MessageBox.Show
                     ($"The Winner this Round Game [ {wordWinner} ] "
                     , "Who Winner Game"
                     , MessageBoxButtons.OK
                     , MessageBoxIcon.Information);
+            }
+
+            if (wordWinner == "Player2")
+            {
+                labelWhoWinnerGame.ForeColor = Color.FromArgb(212, 255, 114);
+                MessageBox.Show
+                    ($"The Winner this Round Game [ {wordWinner} ] "
+                    , "Who Winner Game"
+                    , MessageBoxButtons.OK
+                    , MessageBoxIcon.Information);
+            }
 
 
             if (countGame == 9 && wordWinner == "Draw")
+            {
+                labelWhoWinnerGame.ForeColor = Color.FromArgb(155, 213, 255);
                 MessageBox.Show
                     ($"No The Winner [ Draw ] this Round Game"
                     , "Who Winner Game"
                     , MessageBoxButtons.OK
                     , MessageBoxIcon.Information);
+            }
 
         }
  
