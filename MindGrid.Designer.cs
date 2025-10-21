@@ -42,6 +42,8 @@
             this.labelHowTurnNow = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.labelWhoWinnerGame = new System.Windows.Forms.Label();
+            this.GButtonRestartGame = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.GButtonExitGame = new Guna.UI2.WinForms.Guna2GradientButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -200,7 +202,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Bauhaus 93", 69.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(59, 384);
+            this.label2.Location = new System.Drawing.Point(59, 377);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(336, 106);
             this.label2.TabIndex = 1;
@@ -212,11 +214,72 @@
             this.labelWhoWinnerGame.BackColor = System.Drawing.Color.Transparent;
             this.labelWhoWinnerGame.Font = new System.Drawing.Font("Bauhaus 93", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelWhoWinnerGame.ForeColor = System.Drawing.Color.White;
-            this.labelWhoWinnerGame.Location = new System.Drawing.Point(108, 490);
+            this.labelWhoWinnerGame.Location = new System.Drawing.Point(108, 483);
             this.labelWhoWinnerGame.Name = "labelWhoWinnerGame";
             this.labelWhoWinnerGame.Size = new System.Drawing.Size(183, 39);
             this.labelWhoWinnerGame.TabIndex = 1;
             this.labelWhoWinnerGame.Text = "In Process";
+            // 
+            // GButtonRestartGame
+            // 
+            this.GButtonRestartGame.Animated = true;
+            this.GButtonRestartGame.AnimatedGIF = true;
+            this.GButtonRestartGame.BackColor = System.Drawing.Color.Transparent;
+            this.GButtonRestartGame.BorderRadius = 10;
+            this.GButtonRestartGame.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(213)))), ((int)(((byte)(255)))));
+            this.GButtonRestartGame.CheckedState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(213)))), ((int)(((byte)(255)))));
+            this.GButtonRestartGame.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(213)))), ((int)(((byte)(255)))));
+            this.GButtonRestartGame.CheckedState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(213)))), ((int)(((byte)(255)))));
+            this.GButtonRestartGame.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.GButtonRestartGame.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.GButtonRestartGame.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.GButtonRestartGame.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.GButtonRestartGame.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.GButtonRestartGame.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(130)))), ((int)(((byte)(244)))));
+            this.GButtonRestartGame.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(213)))), ((int)(((byte)(255)))));
+            this.GButtonRestartGame.Font = new System.Drawing.Font("Berlin Sans FB", 15.75F, System.Drawing.FontStyle.Bold);
+            this.GButtonRestartGame.ForeColor = System.Drawing.Color.White;
+            this.GButtonRestartGame.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(213)))), ((int)(((byte)(255)))));
+            this.GButtonRestartGame.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(213)))), ((int)(((byte)(255)))));
+            this.GButtonRestartGame.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(213)))), ((int)(((byte)(255)))));
+            this.GButtonRestartGame.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(213)))), ((int)(((byte)(255)))));
+            this.GButtonRestartGame.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(130)))), ((int)(((byte)(244)))));
+            this.GButtonRestartGame.Location = new System.Drawing.Point(298, 636);
+            this.GButtonRestartGame.Name = "GButtonRestartGame";
+            this.GButtonRestartGame.Size = new System.Drawing.Size(245, 56);
+            this.GButtonRestartGame.TabIndex = 2;
+            this.GButtonRestartGame.Text = "Restart Game";
+            // 
+            // GButtonExitGame
+            // 
+            this.GButtonExitGame.Animated = true;
+            this.GButtonExitGame.AnimatedGIF = true;
+            this.GButtonExitGame.BackColor = System.Drawing.Color.Transparent;
+            this.GButtonExitGame.BorderRadius = 10;
+            this.GButtonExitGame.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(213)))), ((int)(((byte)(255)))));
+            this.GButtonExitGame.CheckedState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(213)))), ((int)(((byte)(255)))));
+            this.GButtonExitGame.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(213)))), ((int)(((byte)(255)))));
+            this.GButtonExitGame.CheckedState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(213)))), ((int)(((byte)(255)))));
+            this.GButtonExitGame.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.GButtonExitGame.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.GButtonExitGame.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.GButtonExitGame.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.GButtonExitGame.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.GButtonExitGame.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(213)))), ((int)(((byte)(255)))));
+            this.GButtonExitGame.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(130)))), ((int)(((byte)(244)))));
+            this.GButtonExitGame.Font = new System.Drawing.Font("Berlin Sans FB", 15.75F, System.Drawing.FontStyle.Bold);
+            this.GButtonExitGame.ForeColor = System.Drawing.Color.White;
+            this.GButtonExitGame.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(213)))), ((int)(((byte)(255)))));
+            this.GButtonExitGame.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(213)))), ((int)(((byte)(255)))));
+            this.GButtonExitGame.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(213)))), ((int)(((byte)(255)))));
+            this.GButtonExitGame.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(213)))), ((int)(((byte)(255)))));
+            this.GButtonExitGame.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(130)))), ((int)(((byte)(244)))));
+            this.GButtonExitGame.Location = new System.Drawing.Point(77, 636);
+            this.GButtonExitGame.Name = "GButtonExitGame";
+            this.GButtonExitGame.Size = new System.Drawing.Size(163, 56);
+            this.GButtonExitGame.TabIndex = 2;
+            this.GButtonExitGame.Text = "Exit";
+            this.GButtonExitGame.Click += new System.EventHandler(this.GButtonExitGame_Click);
             // 
             // MindGrid
             // 
@@ -225,6 +288,8 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(1394, 781);
+            this.Controls.Add(this.GButtonExitGame);
+            this.Controls.Add(this.GButtonRestartGame);
             this.Controls.Add(this.labelWhoWinnerGame);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.labelHowTurnNow);
@@ -274,6 +339,8 @@
         private System.Windows.Forms.Label labelHowTurnNow;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label labelWhoWinnerGame;
+        private Guna.UI2.WinForms.Guna2GradientButton GButtonRestartGame;
+        private Guna.UI2.WinForms.Guna2GradientButton GButtonExitGame;
     }
 }
 

@@ -290,6 +290,9 @@ namespace Tic_Tac_Toe_Game
             changeImagesPictureBoxAndTurnGame(ref pictureBox1, 0, 0 /*arrayPictureBoxMindGrid*/); 
         }
 
-   
+        private void GButtonExitGame_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
