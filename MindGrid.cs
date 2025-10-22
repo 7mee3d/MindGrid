@@ -49,6 +49,7 @@ namespace Tic_Tac_Toe_Game
         //Constant Game
         private const ushort _NUMBER_ROW_ARRAY = 3;
         private const ushort _NUMBER_COLUMN_ARRAY = 3;
+        private  bool _FLAG_IS_ALL_CONTROL_INITIAL_SETTING = true; 
 
         //Private Variable 
         private ushort countGame = 0;         
@@ -145,6 +146,7 @@ namespace Tic_Tac_Toe_Game
             PB.Enabled = false;
             labelWhoWinnerGame.Text =  WhoWinnerInGame(WhoWinnerGame());
             ShowMessageBoxAfterWinner(labelWhoWinnerGame.Text);
+            _FLAG_IS_ALL_CONTROL_INITIAL_SETTING = false;
         }
 
         private void ResetPictureBoxControl()
@@ -310,8 +312,17 @@ namespace Tic_Tac_Toe_Game
 
         private void GButtonRestartGame_Click(object sender, EventArgs e)
         {
+            if (!_FLAG_IS_ALL_CONTROL_INITIAL_SETTING )
             InitialSettingMindGrid();
+            else
+                MessageBox.Show
+                    ("The Game Already is Reset All Setting\nPlease Go To Play Mind Grid"
+                    , "Note Mind Grid Restart Game"
+                    , MessageBoxButtons.OK
+                    , MessageBoxIcon.Exclamation);
 
+            //Change Value Flag After Restart 
+            _FLAG_IS_ALL_CONTROL_INITIAL_SETTING = true; 
         }
 
         private void timer_Tick(object sender, EventArgs e)
