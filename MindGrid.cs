@@ -55,6 +55,7 @@ namespace Tic_Tac_Toe_Game
 
 
         }
+     
         private void changeTheImageAccordingTheWinnerGame(string whoWinnerRound)
         {
             if (whoWinnerRound == "Player1")
@@ -369,6 +370,6 @@ namespace Tic_Tac_Toe_Game
         {
             labelTimeNow.Text = DateTime.Now.ToString();
         }
-   
+
     }
 }

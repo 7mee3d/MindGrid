@@ -198,7 +198,7 @@
             this.labelHowTurnNow.BackColor = System.Drawing.Color.Transparent;
             this.labelHowTurnNow.Font = new System.Drawing.Font("Bauhaus 93", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelHowTurnNow.ForeColor = System.Drawing.Color.White;
-            this.labelHowTurnNow.Location = new System.Drawing.Point(136, 290);
+            this.labelHowTurnNow.Location = new System.Drawing.Point(136, 293);
             this.labelHowTurnNow.Name = "labelHowTurnNow";
             this.labelHowTurnNow.Size = new System.Drawing.Size(130, 45);
             this.labelHowTurnNow.TabIndex = 1;
@@ -210,7 +210,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Bauhaus 93", 69.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(77, 376);
+            this.label2.Location = new System.Drawing.Point(77, 388);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(336, 106);
             this.label2.TabIndex = 1;
@@ -222,7 +222,7 @@
             this.labelWhoWinnerGame.BackColor = System.Drawing.Color.Transparent;
             this.labelWhoWinnerGame.Font = new System.Drawing.Font("Bauhaus 93", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelWhoWinnerGame.ForeColor = System.Drawing.Color.White;
-            this.labelWhoWinnerGame.Location = new System.Drawing.Point(137, 487);
+            this.labelWhoWinnerGame.Location = new System.Drawing.Point(137, 503);
             this.labelWhoWinnerGame.Name = "labelWhoWinnerGame";
             this.labelWhoWinnerGame.Size = new System.Drawing.Size(206, 45);
             this.labelWhoWinnerGame.TabIndex = 1;
@@ -252,7 +252,7 @@
             this.GButtonRestartGame.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(213)))), ((int)(((byte)(255)))));
             this.GButtonRestartGame.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(213)))), ((int)(((byte)(255)))));
             this.GButtonRestartGame.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(130)))), ((int)(((byte)(244)))));
-            this.GButtonRestartGame.Location = new System.Drawing.Point(317, 623);
+            this.GButtonRestartGame.Location = new System.Drawing.Point(316, 637);
             this.GButtonRestartGame.Name = "GButtonRestartGame";
             this.GButtonRestartGame.Size = new System.Drawing.Size(245, 56);
             this.GButtonRestartGame.TabIndex = 2;
@@ -283,7 +283,7 @@
             this.GButtonExitGame.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(213)))), ((int)(((byte)(255)))));
             this.GButtonExitGame.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(213)))), ((int)(((byte)(255)))));
             this.GButtonExitGame.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(130)))), ((int)(((byte)(244)))));
-            this.GButtonExitGame.Location = new System.Drawing.Point(95, 623);
+            this.GButtonExitGame.Location = new System.Drawing.Point(94, 637);
             this.GButtonExitGame.Name = "GButtonExitGame";
             this.GButtonExitGame.Size = new System.Drawing.Size(196, 56);
             this.GButtonExitGame.TabIndex = 2;
@@ -317,7 +317,7 @@
             // PictureBoxTurnImage
             // 
             this.PictureBoxTurnImage.BackColor = System.Drawing.Color.Transparent;
-            this.PictureBoxTurnImage.Location = new System.Drawing.Point(95, 290);
+            this.PictureBoxTurnImage.Location = new System.Drawing.Point(95, 297);
             this.PictureBoxTurnImage.Name = "PictureBoxTurnImage";
             this.PictureBoxTurnImage.Size = new System.Drawing.Size(37, 40);
             this.PictureBoxTurnImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -328,7 +328,7 @@
             // 
             this.PictureBoxHowWinnerImage.BackColor = System.Drawing.Color.Transparent;
             this.PictureBoxHowWinnerImage.Image = global::MindGrid.Properties.Resources.In_Process1;
-            this.PictureBoxHowWinnerImage.Location = new System.Drawing.Point(94, 492);
+            this.PictureBoxHowWinnerImage.Location = new System.Drawing.Point(94, 508);
             this.PictureBoxHowWinnerImage.Name = "PictureBoxHowWinnerImage";
             this.PictureBoxHowWinnerImage.Size = new System.Drawing.Size(37, 40);
             this.PictureBoxHowWinnerImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -362,6 +362,7 @@
             this.Controls.Add(this.pictureBox1);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "MindGrid";
