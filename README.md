@@ -120,6 +120,12 @@ Tic-Tac-Toe-Game/
 ---
 
 
+# 👨💻 Author
 
----
+**Ahmed Jehad Ahmed**  
+
+
+🔗 [GitHub Profile](https://github.com/7mee3d)
+
+📧 [Email Contact](mailto:enginnerahemdjehad2004@gmail.com)
 
