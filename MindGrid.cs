@@ -43,8 +43,31 @@ namespace Tic_Tac_Toe_Game
             }
 
         }
-        
+       
+        private void changeTheImageAccordingTheTurnPlay (string whoTurnPlayRound)
+        {
+            if (whoTurnPlayRound == "Player1")
+                PictureBoxTurnImage.Image = Resources.X_Image_Tic_Tac_Toe;
+            else if (whoTurnPlayRound == "Player2")
+                PictureBoxTurnImage.Image = Resources.O_Image_Tic_Tac_Toe;
+            else
+                PictureBoxTurnImage.Image = Resources.game_over_Image_; 
 
+
+        }
+        private void changeTheImageAccordingTheWinnerGame(string whoWinnerRound)
+        {
+            if (whoWinnerRound == "Player1")
+                PictureBoxHowWinnerImage.Image = Resources.X_Image_Tic_Tac_Toe;
+            else if (whoWinnerRound == "Player2")
+                PictureBoxHowWinnerImage.Image = Resources.O_Image_Tic_Tac_Toe;
+            else if (whoWinnerRound == "Draw")
+                PictureBoxHowWinnerImage.Image = Resources.game_over_Image_;
+
+            else
+                PictureBoxHowWinnerImage.Image = Resources.In_Process1;
+
+        }
 
         //Constant Game
         private const ushort _NUMBER_ROW_ARRAY = 3;
@@ -64,7 +87,9 @@ namespace Tic_Tac_Toe_Game
             labelWhoWinnerGame.Text = "In Process";
             ResetPictureBoxControl();
             labelHowTurnNow.Text = howTurnToGame(startFirstGame);
+            changeTheImageAccordingTheTurnPlay(labelHowTurnNow.Text);
             InitializationArrayPictureBoxies();
+            PictureBoxHowWinnerImage.Image = Resources.In_Process1;
             countGame = 0;
      
         }
@@ -133,6 +158,7 @@ namespace Tic_Tac_Toe_Game
                 PB.Tag = "X";
                 startFirstGame = enTurnPlayers.ekPLAYER_TWO;
                 labelHowTurnNow.Text = howTurnToGame(startFirstGame);
+                changeTheImageAccordingTheTurnPlay(labelHowTurnNow.Text);
             }
             else
             {
@@ -140,11 +166,13 @@ namespace Tic_Tac_Toe_Game
                 PB.Tag = "O";
                 startFirstGame = enTurnPlayers.ekPLAYER_ONE;
                 labelHowTurnNow.Text = howTurnToGame(startFirstGame);
+                changeTheImageAccordingTheTurnPlay(labelHowTurnNow.Text);
             }
 
             countGame++;
             PB.Enabled = false;
             labelWhoWinnerGame.Text =  WhoWinnerInGame(WhoWinnerGame());
+            changeTheImageAccordingTheWinnerGame(labelWhoWinnerGame.Text);
             ShowMessageBoxAfterWinner(labelWhoWinnerGame.Text);
             _FLAG_IS_ALL_CONTROL_INITIAL_SETTING = false;
         }
@@ -167,8 +195,10 @@ namespace Tic_Tac_Toe_Game
         {
             labelHowTurnNow.ForeColor = Color.FromArgb(155, 213, 255);
             labelHowTurnNow.Text = "Game Over";
+            changeTheImageAccordingTheTurnPlay(labelHowTurnNow.Text);
+
         }
-    
+
         private void ShowMessageBoxAfterWinner (string wordWinner)
         {
           
@@ -312,6 +342,7 @@ namespace Tic_Tac_Toe_Game
         {
             changeImagesPictureBoxAndTurnGame(ref pictureBox1, 0, 0 /*arrayPictureBoxMindGrid*/); 
         }
+
 
         //Start Section Control Buttons 
         private void GButtonExitGame_Click(object sender, EventArgs e)

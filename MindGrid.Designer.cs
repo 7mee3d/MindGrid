@@ -48,6 +48,8 @@
             this.GBorderLessFormMindGrid = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.labelTimeNow = new System.Windows.Forms.Label();
+            this.PictureBoxTurnImage = new System.Windows.Forms.PictureBox();
+            this.PictureBoxHowWinnerImage = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -57,6 +59,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxTurnImage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxHowWinnerImage)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -310,6 +314,27 @@
             this.labelTimeNow.TabIndex = 1;
             this.labelTimeNow.Text = "--";
             // 
+            // PictureBoxTurnImage
+            // 
+            this.PictureBoxTurnImage.BackColor = System.Drawing.Color.Transparent;
+            this.PictureBoxTurnImage.Location = new System.Drawing.Point(95, 290);
+            this.PictureBoxTurnImage.Name = "PictureBoxTurnImage";
+            this.PictureBoxTurnImage.Size = new System.Drawing.Size(37, 40);
+            this.PictureBoxTurnImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.PictureBoxTurnImage.TabIndex = 3;
+            this.PictureBoxTurnImage.TabStop = false;
+            // 
+            // PictureBoxHowWinnerImage
+            // 
+            this.PictureBoxHowWinnerImage.BackColor = System.Drawing.Color.Transparent;
+            this.PictureBoxHowWinnerImage.Image = global::MindGrid.Properties.Resources.In_Process1;
+            this.PictureBoxHowWinnerImage.Location = new System.Drawing.Point(94, 492);
+            this.PictureBoxHowWinnerImage.Name = "PictureBoxHowWinnerImage";
+            this.PictureBoxHowWinnerImage.Size = new System.Drawing.Size(37, 40);
+            this.PictureBoxHowWinnerImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.PictureBoxHowWinnerImage.TabIndex = 3;
+            this.PictureBoxHowWinnerImage.TabStop = false;
+            // 
             // MindGrid
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -317,6 +342,8 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(1388, 781);
+            this.Controls.Add(this.PictureBoxHowWinnerImage);
+            this.Controls.Add(this.PictureBoxTurnImage);
             this.Controls.Add(this.GButtonExitGame);
             this.Controls.Add(this.GButtonRestartGame);
             this.Controls.Add(this.labelTimeNow);
@@ -350,6 +377,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxTurnImage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxHowWinnerImage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -375,6 +404,8 @@
         private Guna.UI2.WinForms.Guna2BorderlessForm GBorderLessFormMindGrid;
         private System.Windows.Forms.Label labelTimeNow;
         private System.Windows.Forms.Timer timer;
+        private System.Windows.Forms.PictureBox PictureBoxTurnImage;
+        private System.Windows.Forms.PictureBox PictureBoxHowWinnerImage;
     }
 }
 

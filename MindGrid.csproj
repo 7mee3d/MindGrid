@@ -171,5 +171,14 @@
   <ItemGroup>
     <None Include="Resources\Turn.gif" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\game over Image .png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\In Process.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\In Process1.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
