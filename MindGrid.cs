@@ -163,10 +163,18 @@ namespace Tic_Tac_Toe_Game
             }
         }
      
+        private void setSettingTurnAfterAnyPlayerWinner()
+        {
+            labelHowTurnNow.ForeColor = Color.FromArgb(155, 213, 255);
+            labelHowTurnNow.Text = "Game Over";
+        }
+    
         private void ShowMessageBoxAfterWinner (string wordWinner)
         {
+          
             if (wordWinner == "Player1")
             {
+                setSettingTurnAfterAnyPlayerWinner();
                 labelWhoWinnerGame.ForeColor = Color.FromArgb(255, 140, 250);
                 MessageBox.Show
                     ($"The Winner this Round Game [ {wordWinner} ] "
@@ -177,6 +185,7 @@ namespace Tic_Tac_Toe_Game
 
             if (wordWinner == "Player2")
             {
+                setSettingTurnAfterAnyPlayerWinner();
                 labelWhoWinnerGame.ForeColor = Color.FromArgb(212, 255, 114);
                 MessageBox.Show
                     ($"The Winner this Round Game [ {wordWinner} ] "
@@ -185,9 +194,9 @@ namespace Tic_Tac_Toe_Game
                     , MessageBoxIcon.Information);
             }
 
-
             if (countGame == 9 && wordWinner == "Draw")
             {
+                setSettingTurnAfterAnyPlayerWinner();
                 labelWhoWinnerGame.ForeColor = Color.FromArgb(155, 213, 255);
                 MessageBox.Show
                     ($"No The Winner [ Draw ] this Round Game"
@@ -329,5 +338,6 @@ namespace Tic_Tac_Toe_Game
         {
             labelTimeNow.Text = DateTime.Now.ToString();
         }
+   
     }
 }
