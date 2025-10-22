@@ -113,7 +113,6 @@ Tic-Tac-Toe-Game/
 - 🧮 **Score Tracking** — Track scores across multiple rounds  
 - 🤖 **AI Opponent** — Single-player mode  
 - 🎵 **Sound Effects** — Audio feedback for moves and wins  
-- 🌐 **Online Multiplayer** — Play with others remotely  
 - 🎨 **Themes** — Customizable color and style options  
 - 📊 **Statistics** — Player performance tracking  
 
