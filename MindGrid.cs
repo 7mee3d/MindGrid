@@ -202,7 +202,7 @@ namespace Tic_Tac_Toe_Game
 
         private void ShowMessageBoxAfterWinner (string wordWinner)
         {
-          
+            bool flagIsWin = false; 
             if (wordWinner == "Player1")
             {
                 setSettingTurnAfterAnyPlayerWinner();
@@ -212,6 +212,7 @@ namespace Tic_Tac_Toe_Game
                     , "Who Winner Game"
                     , MessageBoxButtons.OK
                     , MessageBoxIcon.Information);
+                flagIsWin = true; 
             }
 
             if (wordWinner == "Player2")
@@ -223,6 +224,7 @@ namespace Tic_Tac_Toe_Game
                     , "Who Winner Game"
                     , MessageBoxButtons.OK
                     , MessageBoxIcon.Information);
+                flagIsWin = true;
             }
 
             if (countGame == 9 && wordWinner == "Draw")
@@ -234,6 +236,16 @@ namespace Tic_Tac_Toe_Game
                     , "Who Winner Game"
                     , MessageBoxButtons.OK
                     , MessageBoxIcon.Information);
+                flagIsWin = true;
+            }
+
+            if(flagIsWin)
+            foreach (Control outterControl in this.Controls)
+            {
+                if (outterControl is PictureBox PB)
+                {
+                    PB.Enabled = false;
+                }
             }
 
         }
