@@ -150,7 +150,7 @@ namespace Tic_Tac_Toe_Game
             return "In Process";
         }
 
-        private void changeImagesPictureBoxAndTurnGame (ref PictureBox PB , ushort row , ushort column/* , PictureBox[,] arrayPictureBoxies */ )
+        private void changeImagesPictureBoxAndTurnGame ( ref PictureBox PB , ushort row , ushort column/* , PictureBox[,] arrayPictureBoxies */ )
         {
 
             if (startFirstGame == enTurnPlayers.ekPLAYER_ONE)
@@ -301,61 +301,14 @@ namespace Tic_Tac_Toe_Game
             DrawLinesTicTacToeGrid(e); 
         }
 
-
         // Events Picture
-        private void pictureBox2_Click(object sender, EventArgs e)
+        private void pictureBoxMindGridGame_Click(object sender, EventArgs e)
         {
-            changeImagesPictureBoxAndTurnGame(ref pictureBox2, 0, 1 /*arrayPictureBoxMindGrid*/);
+            PictureBox PB = sender as PictureBox; 
+
+            changeImagesPictureBoxAndTurnGame( ref PB, 0, 1 /*arrayPictureBoxMindGrid*/);
 
         }
-
-        private void pictureBox5_Click(object sender, EventArgs e)
-        {
-            changeImagesPictureBoxAndTurnGame(ref pictureBox5, 1, 1 /*arrayPictureBoxMindGrid*/);
-
-        }
-
-        private void pictureBox6_Click(object sender, EventArgs e)
-        {
-            changeImagesPictureBoxAndTurnGame(ref pictureBox6, 1, 2 /*arrayPictureBoxMindGrid*/);
-
-        }
-
-        private void pictureBox4_Click(object sender, EventArgs e)
-        {
-            changeImagesPictureBoxAndTurnGame(ref pictureBox4, 1, 0 /*arrayPictureBoxMindGrid*/);
-
-        }
-
-        private void pictureBox3_Click(object sender, EventArgs e)
-        {
-            changeImagesPictureBoxAndTurnGame(ref pictureBox3, 0, 2 /*arrayPictureBoxMindGrid*/);
-
-        }
-
-        private void pictureBox8_Click(object sender, EventArgs e)
-        {
-            changeImagesPictureBoxAndTurnGame(ref pictureBox8, 2,1  /*arrayPictureBoxMindGrid*/);
-
-        }
-
-        private void pictureBox7_Click(object sender, EventArgs e)
-        {
-            changeImagesPictureBoxAndTurnGame(ref pictureBox7, 2, 0 /*arrayPictureBoxMindGrid*/);
-
-        }
-
-        private void pictureBox9_Click(object sender, EventArgs e)
-        {
-            changeImagesPictureBoxAndTurnGame(ref pictureBox9, 2, 2  /*arrayPictureBoxMindGrid*/);
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-            changeImagesPictureBoxAndTurnGame(ref pictureBox1, 0, 0 /*arrayPictureBoxMindGrid*/); 
-        }
-
 
         //Start Section Control Buttons 
         private void GButtonExitGame_Click(object sender, EventArgs e)
